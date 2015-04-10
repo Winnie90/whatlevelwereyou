@@ -71,8 +71,6 @@ abstract class API {
                 $this->_response('Invalid Method', 405);
                 break;
         }
-
-        $this->_disconnectDatabase();
     }
 
     public function processAPI() {
@@ -107,10 +105,5 @@ abstract class API {
             500 => 'Internal Server Error',
         );
         return ($status[$code])?$status[$code]:$status[500];
-    }
-
-    protected function _disconnectDatabase(){
-        $dbh = DBHandler::getInstance();
-        $dbh->disconnect();
     }
 }

@@ -16,7 +16,6 @@ class Game {
 
     public function getMilestones(){
         $dbh = DBHandler::getInstance();
-        $dbh->retrieveObjects("Milestone");
-        $dbh->disconnect();
+        return $dbh->retrieveObjects("Milestone");
     }
 } 

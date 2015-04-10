@@ -1,10 +1,10 @@
 <?php
 require_once 'mysql.class.php';
-include 'DevelopmentConfiguration.php';
+
 
 class DBHandler {
 
-    protected  $db;
+    protected $conn;
 
     public static function getInstance()
     {
@@ -17,26 +17,60 @@ class DBHandler {
     }
 
     public function __construct(){
-        $this->db = new mysql('localhost', $DB_NAME, $DB_USERNAME, $DB_PASSWORD);
-        $this->db->connect();
+        $this->connect();
+    }
+
+    private function connect(){
+        $user = 'root';
+        $password = 'root';
+        $dbname = 'wlwy';
+        $host = 'localhost';
+
+        // Create connection
+        $this->conn = mysqli_connect($host, $user, $password, $dbname);
+
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+    }
+
+    private function fetchToArray($query){
+        $result=mysqli_query($this->conn, $query);
+        $results = [];
+        while ($row = $result->fetch_assoc()) {
+            array_push($results, $row);
+        }
+        return $results;
     }
 
     public function retrieveObjects($objectName, $params = NULL, $args = NULL){
         $query = $this->constructSelect($objectName, $params, $args);
-        return $this->db->fetchToArray($query);
+        return $this->fetchToArray($query);
     }
 
     private function constructSelect($objectName, $params, $args){
-        $queryString = "SELECT ";
-        if(!isset($params)){
-            $queryString = $queryString . "*";
-        }
-
-        return $queryString . "FROM " . $objectName;
+        //TODO: implement args
+        $queryString = "SELECT " . $this->appendQueryParameters($params);
+        return $queryString . " FROM " . strtolower($objectName);
     }
 
-    public function disconnect(){
-        $this->db->disconnect();
+    private function appendQueryParameters($params){
+        $paramString = "*";
+        if(isset($params)) {
+            $paramString = "";
+            $i = 0;
+            $len = count($params);
+            foreach ($params as $param) {
+                $paramString = $paramString . $param;
+                if ($i == $len - 1) {
+                    $paramString = $paramString . ", ";
+                }
+                $i++;
+            }
+        }
+        return $paramString;
     }
 
 }

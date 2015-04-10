@@ -39,6 +39,7 @@ class mysql {
 		$result_array=array();
 		$result_resource = mysql_query($sql_query, $this->dbh)
 			or $this->error('mysql::fetchToArray',mysql_error());
+        var_dump($sql_query);
 		if(!is_resource($result_resource)) {
 			$this->error('mysql::fetchToArray', mysql_error().' for query: "'.$sql_query.'"');
 		}
