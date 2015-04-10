@@ -1,15 +1,12 @@
 <?php
 
 require_once 'AbstractAPI.class.php';
-require_once '../Models/User.class.php';
 require_once '../Models/Game.class.php';
 require_once '../Database/DBHandler.class.php';
 
 class ConcreteAPI extends API
 {
-    protected $User;
     protected $Game;
-    protected $db;
 
     public function __construct($request) {
         //TODO add origin check back in if user token required
@@ -20,8 +17,8 @@ class ConcreteAPI extends API
         switch ($this->method) {
             case 'GET':
                 try{
-                    $this->getGameFromId($args[0]);
-                    return $this->Game->getMilestones();
+                    $game = Game::getGameFromId($args[0]);
+                    return $game->getMilestones($game->getId());
                 }
                 catch(Exception $e) {
                     return 'Caught exception: ' . $e->getMessage();
@@ -32,12 +29,23 @@ class ConcreteAPI extends API
         }
     }
 
-    protected function getGameFromId($gameId){
-        if(!isset($gameId)){
-            throw new Exception("No game Id provided");
+    protected function results($args) {
+        switch ($this->method) {
+            case 'POST':
+                try{
+                    $result = Result::getGameFromId($args[0]);
+                    return $result;
+                }
+                catch(Exception $e) {
+                    return 'Caught exception: ' . $e->getMessage();
+                }
+                break;
+            default:
+                return "Method type not supported";
         }
-        $this->Game = new Game($gameId);
     }
+
+
 
 
 }

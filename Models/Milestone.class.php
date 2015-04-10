@@ -1,6 +1,7 @@
 <?php
 
 class Milestone {
+
     protected $milestoneId;
 
     public function __construct($milestoneId) {
@@ -9,5 +10,9 @@ class Milestone {
         } else {
             throw new Exception("Is not valid milestone");
         }
+    }
+
+    protected function isValidMilestone($milestoneId){
+        return true;
     }
 } 

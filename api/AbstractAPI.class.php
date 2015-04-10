@@ -59,6 +59,8 @@ abstract class API {
             case 'DELETE':
             case 'POST':
                 $this->request = $this->_cleanInputs($_POST);
+                $this->file = file_get_contents("php://input");
+                $this->json = json_decode($this->file);
                 break;
             case 'GET':
                 $this->request = $this->_cleanInputs($_GET);
