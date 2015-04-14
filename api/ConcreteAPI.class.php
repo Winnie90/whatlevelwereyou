@@ -2,7 +2,8 @@
 
 require_once 'AbstractAPI.class.php';
 require_once '../Models/Game.class.php';
-require_once '../Database/DBHandler.class.php';
+require_once '../Models/Result.class.php';
+require_once '../Database/DBInterface.class.php';
 
 class ConcreteAPI extends API
 {
@@ -17,7 +18,7 @@ class ConcreteAPI extends API
         switch ($this->method) {
             case 'GET':
                 try{
-                    $game = Game::getGameFromId($args[0]);
+                    $game = new Game($args[0]);
                     return $game->getMilestones($game->getId());
                 }
                 catch(Exception $e) {
@@ -29,12 +30,21 @@ class ConcreteAPI extends API
         }
     }
 
-    protected function results($args) {
+    protected function results() {
         switch ($this->method) {
             case 'POST':
                 try{
-                    $result = Result::getGameFromId($args[0]);
-                    return $result;
+                    $this->checkInputJSON();
+                    $milestone = $this->checkValidIntParameter("milestone_id");
+                    $value = $this->checkValidIntParameter("value");
+                    $userId = $this->checkValidIntParameter("userId");
+                    $playtime = $this->checkValidIntParameter("playtime");
+                    $result = new Result($milestone, $value, $userId, $playtime);
+                    if($result->store() > -1){
+                        return $result->toArray();
+                    } else {
+                        throw new ErrorException("Could not store result");
+                    }
                 }
                 catch(Exception $e) {
                     return 'Caught exception: ' . $e->getMessage();
@@ -45,7 +55,15 @@ class ConcreteAPI extends API
         }
     }
 
+    private function checkInputJSON(){
+        if(!isset($this->json)){
+            throw new InvalidArgumentException("Invalid json provided");
+        }
 
+    }
 
-
+    private function checkValidIntParameter($parameter){
+        isset($this->json[$parameter]) ? $return_value = (int)$this->json[$parameter] : $return_value = null;
+        return $return_value;
+    }
 }

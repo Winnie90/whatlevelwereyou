@@ -10,13 +10,6 @@ class Game {
         }
     }
 
-    public static function getGameFromId($gameId){
-        if(!isset($gameId)){
-            throw new Exception("No game Id provided");
-        }
-        return new Game($gameId);
-    }
-
     public function getId(){
         return $this->gameId;
     }
