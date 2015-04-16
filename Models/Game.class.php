@@ -19,7 +19,7 @@ class Game {
     }
 
     public function getMilestones(){
-        $dbh = DBHandler::getInstance();
+        $dbh = DBInterface::getInstance();
         return $dbh->retrieveObjects("Milestone");
     }
 } 

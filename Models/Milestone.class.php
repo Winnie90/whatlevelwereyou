@@ -1,7 +1,7 @@
 <?php
 
 require_once(__DIR__.'/../helpers/stats.class.php');
-require_once(__DIR__.'/../db/DBInterface.class.php');
+require_once(__DIR__ . '/../db/DBInterface.class.php');
 
 define("TRIM_PERCENT", 20);
 
@@ -29,9 +29,9 @@ class Milestone {
     }
 
     private function retrieveMilestoneFromDB($milestoneId){
-        $dbh = DBHandler::getInstance();
-        $milestoneArray = $dbh->retrieveObject("Milestone", null, "milestone_id", $this->id);
-        if(!isset($milestoneArray) || count($milestoneArray)< 1){
+        $dbh = DBInterface::getInstance();
+        $milestoneArray = $dbh->retrieveObjects("Milestone", null, ["id" . " = " . $milestoneId]);
+        if(!isset($milestoneArray)){
             throw new Exception("Milestone does not exist available");
         }
         return $milestoneArray;
@@ -60,7 +60,7 @@ class Milestone {
     }
 
     private function getResultsFromDB(){
-        $dbh = DBHandler::getInstance();
+        $dbh = DBInterface::getInstance();
         $this->results = $dbh->retrieveObjectsBelongingTo("Result", null, "milestone_id", $this->id);
         if(!isset($this->results) || count($this->results)< 1){
             throw new Exception("No results available");
@@ -69,7 +69,7 @@ class Milestone {
     }
 
     private function storeStatistics(){
-        $dbh = DBHandler::getInstance();
+        $dbh = DBInterface::getInstance();
         $success = $dbh->updateObject("Milestone", $this->id, $this->toUpdateStatisticsArray());
         return $success;
     }

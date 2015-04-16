@@ -34,7 +34,11 @@ class DBOperator {
         while ($row = $result->fetch_assoc()) {
             array_push($results, $row);
         }
-        return $results;
+        if(count($results)==1){
+            return $results[0];
+        } else {
+            return $results;
+        }
     }
 
     public function executeQuery($query){

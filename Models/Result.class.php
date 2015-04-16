@@ -23,7 +23,7 @@ class Result {
     }
 
     public function store(){
-        $dbh = DBHandler::getInstance();
+        $dbh = DBInterface::getInstance();
         $this->id = $dbh->insertObject("Result", $this->toArray());
         $this->milestone->updateStatistics();
         return $this->id;

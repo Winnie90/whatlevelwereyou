@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__.'/DBOperator.class.php');
 
-class DBHandler {
+class DBInterface {
 
     private $dbOperator;
 
