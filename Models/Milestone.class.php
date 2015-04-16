@@ -16,20 +16,31 @@ class Milestone {
     private $range;
 
     public function __construct($id) {
-        if($this->isValidMilestone($id)){
-            $this->id = $id;
-        } else {
-            throw new Exception("Is not valid milestone");
-        }
+        $this->getMilestone($id);
     }
 
     public function getId(){
         return $this->id;
     }
 
-    private function isValidMilestone($milestoneId){
-        //TODO
-        return true;
+    private function getMilestone($milestoneId){
+        $milestoneArray = $this->retrieveMilestoneFromDB($milestoneId);
+        $this->initFromArray($milestoneArray);
+    }
+
+    private function retrieveMilestoneFromDB($milestoneId){
+        $dbh = DBHandler::getInstance();
+        $milestoneArray = $dbh->retrieveObject("Milestone", null, "milestone_id", $this->id);
+        if(!isset($milestoneArray) || count($milestoneArray)< 1){
+            throw new Exception("Milestone does not exist available");
+        }
+        return $milestoneArray;
+    }
+
+    private function initFromArray($properties){
+        foreach($properties as $key => $value){
+            $this->{$key} = $value;
+        }
     }
 
     public function updateStatistics(){
