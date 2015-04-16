@@ -1,5 +1,6 @@
 {
     "require": {
-        "guzzle/guzzle": "~3.9"
+        "guzzle/guzzle": "~3.9",
+        "guzzlehttp/guzzle": "~5.0"
     }
 }

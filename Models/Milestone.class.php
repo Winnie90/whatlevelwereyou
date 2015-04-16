@@ -66,7 +66,7 @@ class Milestone {
     public function toUpdateStatisticsArray(){
         return [
                 "trimmed_mean" => $this->trimmedMean,
-                "median" => $this->median,
+                "median" => isset($this->median) ? $this->median : 0,
                 "mode" => $this->mode,
                 "mean" => $this->mean,
                 "range" => $this->range

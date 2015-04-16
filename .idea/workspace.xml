@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c09699d1-fa64-4130-8e75-1b94810f84c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/ConcreteAPI.class.php" afterPath="$PROJECT_DIR$/api/ConcreteAPI.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DBInterface.class.php" afterPath="$PROJECT_DIR$/db/DBInterface.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DBOperator.class.php" afterPath="$PROJECT_DIR$/db/DBOperator.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helpers/testUtils.class.php" afterPath="$PROJECT_DIR$/helpers/testUtils.class.php" />
+    <list default="true" id="c09699d1-fa64-4130-8e75-1b94810f84c1" name="Default" comment="api test for new result">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/models/ResultTest.php" afterPath="$PROJECT_DIR$/tests/models/ResultTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+    </list>
+    <list id="a2ad07fe-f7f2-43e0-9d2a-e70af633d89b" name="Rejected commit: Default" comment="api test for new result">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Milestone.class.php" afterPath="$PROJECT_DIR$/models/Milestone.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/api/ResultAPITest.php" afterPath="$PROJECT_DIR$/tests/api/ResultAPITest.php" />
     </list>
     <ignored path="whatlevelwereyou.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +44,7 @@
       <file leaf-file-name="ResultTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/models/ResultTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="776" selection-end="776" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="600">
+            <state line="30" column="50" selection-start="864" selection-end="864" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -65,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBOperator.class.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DBOperator.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/DBOperator.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="36" selection-start="423" selection-end="423" vertical-scroll-proportion="0.3229279" vertical-offset="0" max-vertical-offset="975">
+            <state line="39" column="41" selection-start="1014" selection-end="1014" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -77,16 +80,16 @@
       <file leaf-file-name="ResultAPITest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/api/ResultAPITest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="7" selection-start="601" selection-end="601" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
+            <state line="9" column="8" selection-start="280" selection-end="339" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Milestone.class.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Milestone.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Milestone.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="38" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-39.125" vertical-offset="96" max-vertical-offset="1230">
+            <state line="30" column="14" selection-start="640" selection-end="640" vertical-scroll-proportion="0.16038752" vertical-offset="301" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -105,15 +108,6 @@
         <entry file="file://$PROJECT_DIR$/tests/models/MilestoneTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="540">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statsTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/helpers/statsTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="66" selection-start="1006" selection-end="1238" vertical-scroll-proportion="-30.625" vertical-offset="15" max-vertical-offset="2070">
               <folding />
             </state>
           </provider>
@@ -160,13 +154,16 @@
         <option value="$PROJECT_DIR$/api/api.php" />
         <option value="$PROJECT_DIR$/api/ConcreteAPI.class.php" />
         <option value="$PROJECT_DIR$/tests/api/ConcreteAPITest.php" />
-        <option value="$PROJECT_DIR$/models/Milestone.class.php" />
-        <option value="$PROJECT_DIR$/tests/models/ResultTest.php" />
-        <option value="$PROJECT_DIR$/tests/api/ResultAPITest.php" />
         <option value="$PROJECT_DIR$/db/DBInterface.class.php" />
+        <option value="$PROJECT_DIR$/models/Milestone.class.php" />
+        <option value="$PROJECT_DIR$/tests/api/ResultAPITest.php" />
+        <option value="$PROJECT_DIR$/tests/models/ResultTest.php" />
         <option value="$PROJECT_DIR$/db/DBOperator.class.php" />
       </list>
     </option>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Analysis" pattern="file:api//*||file:db//*||file:helpers//*||file:models//*||file:tests//*||file:.htaccess" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -174,6 +171,45 @@
     <option name="y" value="23" />
     <option name="width" value="1437" />
     <option name="height" value="1301" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Analysis Scope">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -201,7 +237,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -217,38 +252,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="whatlevelwereyou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whatlevelwereyou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whatlevelwereyou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whatlevelwereyou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="whatlevelwereyou" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="guzzle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,15 +381,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/models/phpunit.phar" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Ignored.Files" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="TODO_SCOPE" value="Project Files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -498,7 +503,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1119" y="23" width="1437" height="1301" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925898" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919767" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -548,7 +553,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="statistics test" />
     <MESSAGE value="mysql connection now working for tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysql connection now working for tests" />
+    <MESSAGE value="api test for new result" />
+    <option name="LAST_COMMIT_MESSAGE" value="api test for new result" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -619,20 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Milestone.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="38" selection-start="2055" selection-end="2055" vertical-scroll-proportion="-39.125" vertical-offset="96" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/api/ResultAPITest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="7" selection-start="601" selection-end="601" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/models/MilestoneTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="213" selection-end="213" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="540">
@@ -649,18 +641,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/models/ResultTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="776" selection-end="776" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="600">
+        <state line="30" column="50" selection-start="864" selection-end="864" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/api/ResultAPITest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="280" selection-end="339" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="405">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/DBOperator.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="36" selection-start="423" selection-end="423" vertical-scroll-proportion="0.3229279" vertical-offset="0" max-vertical-offset="975">
+        <state line="39" column="41" selection-start="1014" selection-end="1014" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="975">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/Milestone.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="14" selection-start="640" selection-end="640" vertical-scroll-proportion="0.16038752" vertical-offset="301" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Analysis</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="Analysis" />
+          </order>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

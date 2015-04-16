@@ -26,7 +26,9 @@ class ResultTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testStoreResult(){
-        $result = new Result(2, 2);
+        $milestone_id = rand(2, 18);
+        $value = rand(0, 100);
+        $result = new Result($milestone_id, $value);
         $result->store();
         $id = testUtils::getProperty($result, "id");
         $this->assertGreaterThan(-1,$id);

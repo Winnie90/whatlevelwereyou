@@ -1,22 +1,21 @@
 <?php
 
-class ResultAPITest extends PHPUnit_Framework_TestCase {
-    /*public function testCreatingResult(){
-        $client = new \Guzzle\Http\Client('http://localhost:8888', array(
-            'request.options' => array(
-                'exceptions' => false,
-            )
-        ));
+require_once(__DIR__.'/../../vendor/autoload.php');
 
-        $milestone_id = rand(3, 19);
+class ResultAPITest extends PHPUnit_Framework_TestCase {
+
+    public function testCreatingResult(){
+        $client = new GuzzleHttp\Client(['base_url' => 'http://localhost:8888/whatlevelwereyou/api/results']);
+
+        $milestone_id = rand(2, 18);
         $value = rand(0, 100);
         $data = array(
             "milestone_id"=> $milestone_id,
             "value"=>$value
         );
 
-        $request = $client->post('/whatlevelwereyou/api/results', null, json_encode($data));
-        $response = $request->send();
-    }*/
+        $req = $client->createRequest('POST', '', ['json' => $data]);
+        $response = $client->send($req);
+        $this->assertEquals($response->getStatusCode(), 200);
+    }
 }
- 
