@@ -26,7 +26,7 @@ class DBOperator {
     public function fetchToArray($query){
         if(!$this->checkConnectivity())
             $this->connect();
-        $result=mysqli_query($this->conn, $query);
+        $result = mysqli_query($this->conn, $query);
         if(!$result){
             throw new Exception("Database Error [{$this->conn->errno}] {$this->conn->error} for {$query}");
         }
@@ -40,7 +40,10 @@ class DBOperator {
     public function executeQuery($query){
         if(!$this->checkConnectivity())
             $this->connect();
-        mysqli_query($this->conn, $query);
+        $result = mysqli_query($this->conn, $query);
+        if(!$result){
+            throw new Exception("Database Error [{$this->conn->errno}] {$this->conn->error} for {$query}");
+        }
         if(mysqli_insert_id($this->conn)!='') {
             return mysqli_insert_id($this->conn);
         } else{

@@ -1,8 +1,8 @@
 <?php
 
 class testUtils {
-    public static function getMethod($name) {
-        $class = new ReflectionClass('Milestone');
+    public static function getMethod($className, $name) {
+        $class = new ReflectionClass($className);
         $method = $class->getMethod($name);
         $method->setAccessible(true);
         return $method;

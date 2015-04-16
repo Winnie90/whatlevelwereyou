@@ -21,7 +21,7 @@ class MilestoneTest extends PHPUnit_Framework_TestCase {
     {
         $testArray = [1,2,3,4,1,2,1];
         $this->milestone = new Milestone(1);
-        $runStatisticsMethod = testUtils::getMethod("runStatistics");
+        $runStatisticsMethod = testUtils::getMethod("Milestone","runStatistics");
         $runStatisticsMethod->invoke($this->milestone, $testArray);
 
         $trimmedMean = testUtils::getProperty($this->milestone, "trimmedMean");

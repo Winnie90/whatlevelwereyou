@@ -28,6 +28,7 @@ class Milestone {
     }
 
     private function isValidMilestone($milestoneId){
+        //TODO
         return true;
     }
 
@@ -63,18 +64,13 @@ class Milestone {
     }
 
     public function toUpdateStatisticsArray(){
-        $id_array = [];
-        if(isset($this->id)){
-            $id_array = ["id" => $this->id];
-        }
-        return array_merge($id_array,
-            [
+        return [
                 "trimmed_mean" => $this->trimmedMean,
                 "median" => $this->median,
                 "mode" => $this->mode,
                 "mean" => $this->mean,
                 "range" => $this->range
-            ]
-        );
+        ];
+
     }
 }

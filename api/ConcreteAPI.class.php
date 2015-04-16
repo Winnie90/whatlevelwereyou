@@ -1,9 +1,9 @@
 <?php
 
 require_once 'AbstractAPI.class.php';
-require_once '../models/Game.class.php';
-require_once '../models/Result.class.php';
-require_once '../db/DBInterface.class.php';
+require_once(__DIR__ . '/../models/Game.class.php');
+require_once(__DIR__ . '/../models/Result.class.php');
+require_once(__DIR__ . '/../db/DBInterface.class.php');
 
 class ConcreteAPI extends API
 {

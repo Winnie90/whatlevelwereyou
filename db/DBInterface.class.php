@@ -1,5 +1,5 @@
 <?php
-require_once 'DBOperator.class.php';
+require_once(__DIR__.'/DBOperator.class.php');
 
 class DBHandler {
 
@@ -41,10 +41,16 @@ class DBHandler {
     }
 
     public function updateObject($objectName, $objectId, $inData){
-        $columnString = implode(", ", array_keys($inData));
+        $escaped_keys = array_map('mysql_real_escape_string', array_keys($inData));
         $escaped_values = array_map('mysql_real_escape_string', array_values($inData));
-        $values  = implode(", ", $escaped_values);
-        $sql = "INSERT INTO ".$objectName."($columnString) VALUES ($values) WHERE id = ".$objectId;
+        $setString = implode(', ',
+                        array_map(
+                            function ($v, $k) { return '`' . $k . '`=' . $v . ''; },
+                            $escaped_values,
+                            $escaped_keys
+                        )
+                    );
+        $sql = "UPDATE ".$objectName." SET $setString WHERE `id` = ".$objectId;
         return $this->dbOperator->executeQuery($sql);
     }
 
